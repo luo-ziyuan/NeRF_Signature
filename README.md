@@ -8,7 +8,7 @@ The project has the same dependencies as [torch-ngp](https://github.com/ashawkey
 ## Usage
 
 ### 1. Train Clean Models
-First, train clean NeRF models for different datasets:
+First, use [torch-ngp](https://github.com/ashawkey/torch-ngp/tree/main) to train clean NeRF models for different datasets:
 
 #### Mip-NeRF 360
 ```bash
