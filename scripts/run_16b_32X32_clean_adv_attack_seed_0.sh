@@ -1,0 +1,8 @@
+#! /bin/bash
+CUDA_VISIBLE_DEVICES=0 python main_nerf_wtmk.py data/TanksAndTemple/Family --workspace logs/Family_wtmk_32b -O --wtmk_tcnn --ckpt ./clean_model/Family_ngp_ep0226.pth --message_dim 32 --loss_w bce --lambda_w 0.005 --lambda_i 1.0 --num_rays 4096 --rand_pose 0 --n_views 1 --iters 2400 --num_rows 32 --num_cols 32 --use_existset --eval_interval 5 --save_interval 5 --num_images_test 10 --bound 1.0 --scale 0.33 --dt_gamma 0 --downscale 4 &
+
+CUDA_VISIBLE_DEVICES=1 python main_nerf_wtmk.py data/360_v2/counter --workspace logs/counter_wtmk_32b -O --wtmk_tcnn --ckpt ./clean_model/counter_ngp_ep0125.pth --message_dim 32 --loss_w bce --lambda_w 0.005 --lambda_i 1.0 --num_rays 4096 --rand_pose 0 --n_views 1 --iters 2400 --num_rows 32 --num_cols 32 --use_existset --eval_interval 5 --save_interval 5 --num_images_test 10 --scale 0.33 --dt_gamma 0 &
+
+CUDA_VISIBLE_DEVICES=2 python main_nerf_wtmk.py data/nerf_llff_data/fern --workspace logs/fern_wtmk_32b -O --dt_gamma 0 --wtmk_tcnn --ckpt ./clean_model/fern_ngp_ep1500.pth --message_dim 32 --loss_w bce --lambda_w 0.005 --lambda_i 1.0 --num_rays 4096 --rand_pose 0 --n_views 1 --iters 2400 --num_rows 32 --num_cols 32 --use_existset --eval_interval 5 --save_interval 5 --num_images_test 10 &
+
+CUDA_VISIBLE_DEVICES=3 python main_nerf_wtmk.py data/nerf_synthetic/hotdog --workspace logs/hotdog_wtmk_32b -O --wtmk_tcnn --ckpt ./clean_model/hotdog_ngp_ep0300.pth --message_dim 32 --downscale 2 --loss_w bce --lambda_w 0.005 --lambda_i 1.0 --num_rays 4096 --rand_pose 0 --n_views 1 --iters 2400 --num_rows 32 --num_cols 32 --use_existset --eval_interval 5 --save_interval 5 --num_images_test 10 --bound 1.0 --scale 0.8 --dt_gamma 0

@@ -1,0 +1,11 @@
+__pycache__/
+
+.idea/
+.vscode/
+
+logs/
+*.log
+
+data/
+
+clean_model/
