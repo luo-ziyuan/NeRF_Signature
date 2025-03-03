@@ -1,9 +1,9 @@
 # NeRF_Signature
 
-Source code of the paper "The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields".
+Source code of the paper "[The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields](https://arxiv.org/abs/2502.19125)".
 
 ## Installation
-Dependencies requirement same as [torch-ngp](https://github.com/ashawkey/torch-ngp/tree/main)
+The project has the same dependencies as [torch-ngp](https://github.com/ashawkey/torch-ngp/tree/main).
 
 ## Usage
 
@@ -54,6 +54,8 @@ python main_nerf_wtmk.py data/nerf_llff_data/fern --workspace logs/fern_wtmk_32b
 ```bash
 python main_nerf_wtmk.py data/TanksAndTemple/Family --workspace logs/Family_wtmk_32b -O --wtmk_tcnn --ckpt ./clean_model/Family_ngp_ep0226.pth --message_dim 32 --loss_w bce --lambda_w 0.005 --lambda_i 1.0 --num_rays 4096 --rand_pose 0 --n_views 1 --iters 600 --num_rows 32 --num_cols 32 --use_existset --eval_interval 5 --save_interval 5 --num_images_test 10 --bound 1.0 --scale 0.33 --dt_gamma 0 --downscale 4
 ```
+
+This project is built upon [torch-ngp](https://github.com/ashawkey/torch-ngp/tree/main) and [HashNeRF-pytorch](https://github.com/yashbhalgat/HashNeRF-pytorch). We express our sincere gratitude to the authors of these repositories.
 
 If you find our paper useful for your work please cite:
 ```
